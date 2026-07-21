@@ -25,6 +25,16 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
+      - name: Cache Pacman & Archiso Packages
+        uses: actions/cache@v4
+        with:
+          path: |
+            /var/cache/pacman/pkg
+            /var/lib/pacman
+          key: ${{ runner.os }}-pacman-${{ hashFiles('profile/packages.x86_64') }}
+          restore-keys: |
+            ${{ runner.os }}-pacman-
+
       - name: System Update & Install Archiso
         run: |
           pacman -Syu --noconfirm
@@ -35,12 +45,12 @@ jobs:
           chmod +x build.sh
           ./build.sh
 
-      - name: Upload ISO Artifact
+      - name: Upload ISO Artifact (Retained 90 Days)
         uses: actions/upload-artifact@v4
         with:
           name: LypusOS-ISO
           path: out/*.iso
-          retention-days: 7
+          retention-days: 90
 
       - name: Create Release
         if: startsWith(github.ref, 'refs/tags/v')
@@ -52,7 +62,8 @@ jobs:
             Built automatically by **KERNEL FORGE** GitHub Actions CI/CD.
             
             - **Base**: Arch Linux
-            - **Desktop**: Hyprland
+            - **Desktop**: Hyprland (Dank Shell optimized)
             - **AUR Helper**: yay
+            - **GPU**: NVIDIA & AMD Out-of-the-box support
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
