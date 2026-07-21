@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="assets/logo.jpg" alt="LypusOS Logo" width="220" style="border-radius: 50%;" />
+
 # 🌌 LypusOS
 
 **Une distribution Linux moderne, fluide et élégante basée sur Arch Linux avec Hyprland par défaut.**
@@ -38,6 +40,8 @@ L'objectif de LypusOS est de fournir un environnement de travail pré-configuré
 
 ```text
 LypusOs/
+├── assets/
+│   └── logo.jpg             # Logo officiel LypusOS (KERNEL FORGE)
 ├── .github/workflows/
 │   └── build-iso.yml        # CI/CD GitHub Actions pour builder l'ISO
 ├── profile/                 # Profil personnalisé Archiso
