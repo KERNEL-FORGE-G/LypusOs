@@ -1,0 +1,60 @@
+# Base System
+base
+base-devel
+linux
+linux-firmware
+sudo
+git
+wget
+curl
+nano
+vim
+
+# Network
+networkmanager
+iwd
+wireless_tools
+wpa_supplicant
+
+# Audio & Media
+pipewire
+pipewire-alsa
+pipewire-pulse
+pipewire-jack
+wireplumber
+pavucontrol
+
+# Wayland & Hyprland DE
+hyprland
+xdg-desktop-portal-hyprland
+xdg-desktop-portal-gtk
+qt5-wayland
+qt6-wayland
+polkit-kde-agent
+
+# Desktop Utilities & UX
+kitty
+waybar
+rofi-wayland
+swaync
+hyprpaper
+grim
+slurp
+wl-clipboard
+brightnessctl
+fastfetch
+thunar
+thunar-archive-plugin
+file-roller
+ttf-dejavu
+ttf-liberation
+noto-fonts
+ttf-font-awesome
+sddm
+
+# Archiso tools
+arch-install-scripts
+mkinitcpio
+dosfstools
+e2fsprogs
+squashfs-tools
